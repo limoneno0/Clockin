@@ -22,4 +22,5 @@ Link para o protótipo no Figma: [link]
 ## Status do Projeto
 Em desenvolvimento.
 
-Primeira versão estimada para: [data]
+Primeira versão estimada para: 10/25
+
