@@ -1,0 +1,270 @@
+<link rel="stylesheet" href="css/controledeponto.css">
+
+<div class="container">
+  <div class="titlepage mb-4">
+    <h1><strong>Controle de Ponto</strong></h1>
+  </div>
+
+  <div class="table-header-controls d-flex justify-content-between mb-3">
+    <h3 class="section-title me-4">Funcionários</h3> 
+    <div class="search-and-filter d-flex align-items-center">
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" placeholder="Busca" class="search-input">
+      </div>
+      <select class="form-select filter-dropdown">
+        <option>Filtros</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="tblst p-0 mb-4">
+    <div class="table-responsive">
+      <table class="table align-middle ponto-table">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Cargo</th>
+            <th>Setor</th>
+            <th>Status</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Horas Trabalhadas</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ana Souza</td>
+            <td>Analista Comercial</td>
+            <td>Comercial</td>
+            <td><span class="status present">Presente</span></td>
+            <td>08:00</td><td>17:00</td><td>9h</td><td>Batido</td>
+          </tr>
+          <tr>
+            <td>Júlia Dantas</td>
+            <td>Desenvolvedora</td>
+            <td>TI</td>
+            <td><span class="status late">Atraso</span></td>
+            <td>09:00</td><td>17:00</td><td>8h</td><td>Batido</td>
+          </tr>
+          <tr>
+            <td>Pedro Gomes</td>
+            <td>Designer Gráfico</td>
+            <td>Marketing</td>
+            <td><span class="status absent">Falta</span></td>
+            <td>-</td><td>-</td><td>0h</td><td>Não batido</td>
+          </tr>
+          <tr>
+            <td>Érica Oliveira</td>
+            <td>Designer Gráfica</td>
+            <td>Marketing</td>
+            <td><span class="status leftsoon">Saída Antecipada</span></td>
+            <td>08:00</td><td>15:30</td><td>7h30</td><td>Batido</td>
+          </tr>
+          <tr>
+            <td>Carlos Lima</td>
+            <td>Suporte Técnico</td>
+            <td>Marketing</td>
+            <td><span class="status present2">Presente</span></td>
+            <td>08:00</td><td>18:00</td><td>10h</td><td>Batido</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="employee-card">
+        <div class="employee-card-header">
+            <span class="employee-name">Ana Souza</span>
+            <span class="status present">Presente</span>
+        </div>
+        <div class="employee-card-body">
+            <div class="card-detail">
+                <span class="card-label">Cargo</span>
+                <span class="card-value">Analista Comercial</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Setor</span>
+                <span class="card-value">Comercial</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Entrada</span>
+                <span class="card-value">08:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Saída</span>
+                <span class="card-value">17:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Horas Trab.</span>
+                <span class="card-value">9h</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Situação</span>
+                <span class="card-value">Batido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="employee-card">
+        <div class="employee-card-header">
+            <span class="employee-name">Júlia Dantas</span>
+            <span class="status late">Atraso</span>
+        </div>
+        <div class="employee-card-body">
+            <div class="card-detail">
+                <span class="card-label">Cargo</span>
+                <span class="card-value">Desenvolvedora</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Setor</span>
+                <span class="card-value">TI</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Entrada</span>
+                <span class="card-value">09:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Saída</span>
+                <span class="card-value">17:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Horas Trab.</span>
+                <span class="card-value">8h</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Situação</span>
+                <span class="card-value">Batido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="employee-card">
+        <div class="employee-card-header">
+            <span class="employee-name">Pedro Gomes</span>
+            <span class="status absent">Falta</span>
+        </div>
+        <div class="employee-card-body">
+            <div class="card-detail">
+                <span class="card-label">Cargo</span>
+                <span class="card-value">Designer Gráfico</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Setor</span>
+                <span class="card-value">Marketing</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Entrada</span>
+                <span class="card-value">-</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Saída</span>
+                <span class="card-value">-</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Horas Trab.</span>
+                <span class="card-value">0h</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Situação</span>
+                <span class="card-value">Não batido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="employee-card">
+        <div class="employee-card-header">
+            <span class="employee-name">Érica Oliveira</span>
+            <span class="status leftsoon">Saída Antecipada</span>
+        </div>
+        <div class="employee-card-body">
+            <div class="card-detail">
+                <span class="card-label">Cargo</span>
+                <span class="card-value">Designer Gráfica</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Setor</span>
+                <span class="card-value">Marketing</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Entrada</span>
+                <span class="card-value">08:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Saída</span>
+                <span class="card-value">15:30</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Horas Trab.</span>
+                <span class="card-value">7h30</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Situação</span>
+                <span class="card-value">Batido</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="employee-card">
+        <div class="employee-card-header">
+            <span class="employee-name">Carlos Lima</span>
+            <span class="status present2">Presente</span>
+        </div>
+        <div class="employee-card-body">
+            <div class="card-detail">
+                <span class="card-label">Cargo</span>
+                <span class="card-value">Suporte Técnico</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Setor</span>
+                <span class="card-value">Marketing</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Entrada</span>
+                <span class="card-value">08:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Saída</span>
+                <span class="card-value">18:00</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Horas Trab.</span>
+                <span class="card-value">10h</span>
+            </div>
+            <div class="card-detail">
+                <span class="card-label">Situação</span>
+                <span class="card-value">Batido</span>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <section class="alerts-section p-3">
+    <h3 class="mb-3">⚠️ Alertas e Pendências</h3>
+    <div class="d-flex flex-wrap gap-3">
+      <div class="alerta-card nao-batido">
+        <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="alert-text">Não batido</span>
+        <span class="alert-name">Pedro Gomes</span>
+      </div>
+
+      <div class="alerta-card atraso">
+        <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="alert-text">Atraso</span>
+        <span class="alert-name">Júlia Dantas</span>
+      </div>
+
+      <div class="alerta-card hora-extra">
+        <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="alert-text">Hora Extra</span>
+        <span class="alert-name">Carlos Lima <span class="extra-time">+1h</span></span>
+      </div>
+
+      <div class="alerta-card saida-antecipada-card">
+        <span class="alert-icon"><i class="fa-solid fa-circle-exclamation"></i></span>
+        <span class="alert-text">Saída Antecipada</span>
+        <span class="alert-name">Érica Oliveira</span>
+      </div>
+    </div>
+  </section>
+</div>

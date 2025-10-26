@@ -1,0 +1,174 @@
+:root {
+    --primary-blue: #007bff; 
+    --border-color: #dee2e6; 
+    --light-gray: #f8f9fa; 
+    --card-border-color: #f2edee; 
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f9fafc;
+    /* min-width: 1024px; (REMOVIDO para responsividade) */
+}
+
+.topoh {
+    background-color: #fff;
+    border-bottom: 1.5px solid #f2edee;
+    width: 100%;
+}
+
+.imgicon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.legenda {
+    font-size: 0.875rem;
+    color: grey;
+}
+
+/* NOVO: Estilos do Overlay para Mobile (para fechar ao clicar fora) */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 1029; /* Abaixo da sidebar (1030) */
+    display: none; 
+    cursor: pointer;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 16rem;
+    border-right: 1.5px solid #f2edee;
+    background-color: #fff;
+    /* Estilos para fixar no desktop */
+    position: sticky;
+    top: 0;
+    flex-shrink: 0; 
+}
+
+.sidebar a {
+    text-decoration: none; 
+    color: black; 
+    display: block;
+}
+
+/* CORREÇÃO DE ALINHAMENTO: Uso de Flexbox para centralizar ícones e texto */
+.sidebar-item {
+    display: flex; /* Habilita o Flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    
+    border-radius: 10px;
+    padding: 0.6rem 1rem;
+    margin: 0.3rem 0;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-item i {
+    min-width: 20px; /* Garante alinhamento consistente dos textos */
+    text-align: center;
+}
+
+.sidebar-item:hover,
+.sidebar-item.active,
+.sidebar-footer:hover {
+    background-color: #f2edee;
+}
+
+.sidebar-brand h3 {
+    font-size: 1.25rem;
+    color: blue;
+}
+
+#logout-item .sidebar-item {
+    color: blue;
+    font-weight: 500;
+    /* Mantivemos as propriedades de alinhamento do .sidebar-item, apenas adicionamos cor e peso de fonte */
+    /* Removemos 'display: flex', 'align-items', 'gap', 'padding' pois já estão no .sidebar-item */
+    margin-top: auto; /* Mantido se for para o item ir para o rodapé */
+}
+
+/* SUBSTITUÍMOS .sidebar-footer i PELA REGRA PARA O ÍCONE DO NOVO ITEM SAIR */
+#logout-item .sidebar-item i {
+    color: blue;
+}
+
+main {
+    background-color: #f9fafc;
+    /* Garante que o conteúdo principal ocupe o espaço restante */
+    min-height: calc(100vh - 56px);
+}
+
+.container {
+    max-width: none; 
+    padding: 0; 
+}
+
+.titlepage h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* --- SEÇÃO DE RESPONSIVIDADE MOBILE (Media Queries) --- */
+
+/* Aplicar estilos quando a largura da tela for no máximo 991.98px (Mobile/Tablet) */
+@media (max-width: 991.98px) {
+    
+    /* CABEÇALHO */
+    .topoh-info #nome,
+    .topoh-info #email {
+        /* Ocultar nome completo e email no cabeçalho em telas menores */
+        display: none !important; 
+    }
+    
+    .sidebar-brand .legenda {
+        /* Ocultar a legenda em telas menores */
+        display: none !important;
+    }
+
+    /* BARRA LATERAL (Inicia fora da tela) */
+    .sidebar {
+        position: fixed; 
+        left: -16rem; /* Esconde a sidebar fora da tela */
+        top: 0;
+        bottom: 0;
+        z-index: 1030; /* Acima do overlay */
+        transition: left 0.3s ease; /* Adiciona transição suave */
+        height: 100%;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    /* Classe que será adicionada via JavaScript para mostrar a sidebar */
+    .sidebar.open {
+        left: 0;
+    }
+
+    /* Oculta o brand de desktop (ClockIn) dentro do cabeçalho */
+    .topoh .sidebar-brand {
+        display: none !important;
+    }
+}

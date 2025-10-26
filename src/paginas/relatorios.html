@@ -1,0 +1,205 @@
+<link rel="stylesheet" href="css/relatorios.css">
+
+<div class="container">
+  <div class="titlepage mb-4">
+    <h1><strong>Relatórios</strong></h1>
+  </div>
+
+  <section class="reports-section">
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <p class="stat-label">Horas extras no mês</p>
+        <p class="stat-value">42h</p>
+      </div>
+
+      <div class="stat-card">
+        <p class="stat-label">% de presença geral</p>
+        <p class="stat-value">96%</p>
+      </div>
+
+      <div class="stat-card">
+        <p class="stat-label">% de alguma coisa</p>
+        <p class="stat-value">45%</p>
+      </div>
+    </div>
+
+    <div class="filters">
+      <div class="filter-group">
+        <label>Período</label>
+        <select>
+          <option>Agosto 2025</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Funcionário</label>
+        <select>
+          <option>Todos</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Setor</label>
+        <select>
+          <option>Todos</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Tipo de informação</label>
+        <select>
+          <option>Todas</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Status</label>
+        <select>
+          <option>Todos</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="charts-grid">
+      <div class="chart-card">
+        <h3>Presenças vs Faltas</h3>
+        <div class="pie-chart">
+          <svg viewBox="0 0 200 200">
+            <circle cx="100" cy="100" r="80" fill="#5B9BD5" stroke="none" />
+            <path
+              d="M 100 100 L 100 20 A 80 80 0 0 1 180 100 Z"
+              fill="#B4D7F5"
+            />
+            <text
+              x="65"
+              y="120"
+              text-anchor="middle"
+              fill="white"
+              font-size="20"
+              font-weight="bold"
+            >
+              80%
+            </text>
+            <text
+              x="140"
+              y="80"
+              text-anchor="middle"
+              fill="white"
+              font-size="20"
+              font-weight="bold"
+            >
+              20%
+            </text>
+          </svg>
+
+          <div class="legend">
+            <div class="legend-item">
+              <span
+                class="legend-color"
+                style="background: #5B9BD5;"
+              ></span>
+              Presenças
+            </div>
+
+            <div class="legend-item">
+              <span
+                class="legend-color"
+                style="background: #B4D7F5;"
+              ></span>
+              Faltas
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <h3>Horas extras por setor</h3>
+        <div class="bar-chart">
+          <div class="bar" style="height: 75%;">
+            <div class="bar-fill"></div>
+            <span class="bar-label">Comercial</span>
+          </div>
+
+          <div class="bar" style="height: 55%;">
+            <div class="bar-fill"></div>
+            <span class="bar-label">TI</span>
+          </div>
+
+          <div class="bar" style="height: 40%;">
+            <div class="bar-fill"></div>
+            <span class="bar-label">Marketing</span>
+          </div>
+
+          <div class="bar" style="height: 25%;">
+            <div class="bar-fill"></div>
+            <span class="bar-label">P&D</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-container">
+      
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Funcionário</th>
+            <th>Setor</th>
+            <th>Horas Previstas</th>
+            <th>Horas Trabalhadas</th>
+            <th>Horas Extras</th>
+            <th>Situação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ana Souza</td>
+            <td>Comercial</td>
+            <td>9h</td>
+            <td>8h</td>
+            <td>0h</td>
+            <td><span class="status-badge present">Presente</span></td>
+          </tr>
+
+          <tr>
+            <td>Carlos Lima</td>
+            <td>TI</td>
+            <td>9h</td>
+            <td>8h</td>
+            <td>0h</td>
+            <td><span class="status-badge present">Presente</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="employee-cards-container">
+        <div class="employee-card">
+          <div class="card-header">
+            <span class="employee-name">Ana Souza</span>
+            <span class="status-badge present">Presente</span>
+          </div>
+          <div class="card-body">
+            <p class="card-item"><strong>Setor:</strong> Comercial</p>
+            <p class="card-item"><strong>Horas Previstas:</strong> 9h</p>
+            <p class="card-item"><strong>Horas Trabalhadas:</strong> 8h</p>
+            <p class="card-item"><strong>Horas Extras:</strong> 0h</p>
+          </div>
+        </div>
+
+        <div class="employee-card">
+          <div class="card-header">
+            <span class="employee-name">Carlos Lima</span>
+            <span class="status-badge present">Presente</span>
+          </div>
+          <div class="card-body">
+            <p class="card-item"><strong>Setor:</strong> TI</p>
+            <p class="card-item"><strong>Horas Previstas:</strong> 9h</p>
+            <p class="card-item"><strong>Horas Trabalhadas:</strong> 8h</p>
+            <p class="card-item"><strong>Horas Extras:</strong> 0h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

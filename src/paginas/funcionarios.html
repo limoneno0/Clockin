@@ -1,0 +1,80 @@
+<link rel="stylesheet" href="css/funcionarios.css">
+<script src="script.js"></script>
+
+<div class="container">
+  <div class="titlepage mb-4">
+    <h1><strong>Funcionários</strong></h1>
+  </div>
+
+  <div class="filters">
+    <div class="input">
+      <input
+        type="text"
+        id="search"
+        placeholder="Buscar funcionário..."
+        aria-label="Buscar"
+      />
+    </div>
+    <div class="filter-selects">
+      <div class="select">
+        <select>
+          <option>Setor</option>
+        </select>
+      </div>
+
+      <div class="select">
+        <select>
+          <option>Cargo</option>
+        </select>
+      </div>
+
+      <div class="select">
+        <select>
+          <option>Status</option>
+        </select>
+      </div>
+
+      <div class="select">
+        <select>
+          <option>Contrato</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOVO WRAPPER: agrupa a tabela e o painel lateral -->
+  <div class="funcionarios-layout">
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Foto</th>
+          <th>Nome</th>
+          <th>Cargo</th>
+          <th>Setor</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <aside class="details">
+      <div class="panel" id="details" hidden>
+        <div class="header">
+          <img id="d-foto" alt="" />
+          <div class="name-role">
+            <div class="name" id="d-nome">—</div>
+            <div class="role" id="d-cargo">—</div>
+          </div>
+        </div>
+        <nav class="menu">
+          <a id="link-pessoa" href="pessoa.html">Informações Pessoais <span>›</span></a>
+          <a href="#">Dados Contratuais <span>›</span></a>
+          <a href="#">Escala de Trabalho <span>›</span></a>
+          <a href="#">Histórico de Ponto <span>›</span></a>
+        </nav>
+      </div>
+    </aside>
+
+  </div>
+</div>

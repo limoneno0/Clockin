@@ -1,0 +1,312 @@
+:root { 
+    --present-color: #28a745; 
+    --late-color: #ffc107; 
+    --absent-color: #dc3545; 
+    --leftsoon-color: #ffc107;
+    --present2-color: #007bff;
+    --border-color: #dee2e6;
+    --light-gray: #f8f9fa; 
+}
+
+/* --- Controles de Busca e Filtro (Corrigido para a Lupa) --- */
+.search-and-filter {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #fff;
+    flex-grow: 1; 
+}
+
+.search-box {
+    position: relative; 
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.search-input {
+    padding: 8px 10px;
+    padding-left: 35px; /* Espaço para o ícone */
+    border: none;
+    outline: none;
+    font-size: 0.9em;
+    width: 100%; 
+}
+
+.search-icon {
+    position: absolute; 
+    left: 10px; 
+    color: #888;
+    font-size: 0.9em;
+    z-index: 2; 
+    pointer-events: none; 
+}
+
+.filter-dropdown {
+    padding: 8px 30px 8px 20px; /* Mantém o padding da direita para afastar o texto do ícone */
+    border: none;
+    border-left: 1px solid var(--border-color);
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    width: auto; /* Volta para auto */
+    flex-shrink: 0; /* Garante que não encolha mais do que o necessário */
+    border-radius: 0;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 10px 10px;
+}
+
+/* --- Estilo da Tabela (Visível em Desktop) --- */
+.tblst {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 0;
+}
+
+.ponto-table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.ponto-table thead th {
+    background-color: var(--light-gray); 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #555;
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.ponto-table tbody tr td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.ponto-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    font-weight: normal; 
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0;
+}
+
+.status::before {
+    content: '•'; 
+    font-size: 1.5rem;
+    line-height: 0;
+    margin-right: 5px;
+}
+
+.status.present::before { color: var(--present-color); }
+.status.late::before { color: var(--late-color); }
+.status.absent::before { color: var(--absent-color); }
+.status.leftsoon::before { color: var(--leftsoon-color); }
+.status.present2::before { color: var(--present2-color); }
+
+
+/* Regras herdadas do seu código original (early exit) - Mantidas por segurança, mas não usadas nos cards */
+.early-exit-row td:nth-child(4) { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.early-exit-label {
+    font-size: 0.8em;
+    color: #888;
+    line-height: 1.2;
+}
+.early-exit-time {
+    font-size: 0.95em;
+    color: #333;
+}
+
+
+/* --- Estilo da Seção de Alertas --- */
+.alerts-section {
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    background-color: #fff; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.alerta-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 15px 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+}
+
+.alert-icon {
+    font-size: 1.5em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.alert-text {
+    font-weight: bold;
+    display: block;
+    font-size: 1em;
+}
+
+.alert-name {
+    font-size: 0.85em;
+    color: #666;
+    display: block;
+    margin-top: 5px;
+}
+
+.extra-time {
+    font-weight: bold;
+    margin-left: 5px;
+    color: var(--present-color);
+}
+
+.nao-batido { background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; }
+.nao-batido .alert-icon { color: #dc3545; }
+
+.atraso, .saida-antecipada-card { background-color: #fff3cd; border-color: #f3de9f; color: #856404; }
+.atraso .alert-icon, .saida-antecipada-card .alert-icon { color: #ffc107; } 
+
+.hora-extra { background-color: #dcebfe; border-color: #bcd3f9; color: #0c5460; }
+.hora-extra .alert-icon { color: #446ce4; }
+.hora-extra .alert-name { color: #0c5460; }
+
+
+/* --- Estilo dos Cards de Funcionário (Para Mobile) --- */
+.employee-card {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: none; /* Escondido por padrão, será mostrado no mobile */
+}
+
+.employee-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.employee-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.employee-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.card-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-size: 0.8em;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.card-value {
+    font-weight: 500;
+    color: #333;
+}
+
+/* --- MEDIA QUERIES PARA MOBILE (max-width: 768px) --- */
+@media (max-width: 768px) { 
+    /* Esconde a tabela e mostra os cards no mobile */
+    .tblst .table-responsive {
+        display: none;
+    }
+    .employee-card {
+        display: block; 
+    }
+
+    /* Ajusta o layout dos controles de busca e filtro para mobile */
+    .table-header-controls {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .search-and-filter {
+        width: 100%;
+        margin-top: 10px;
+        border: none; /* Remove a borda do contêiner para estilizar itens individualmente */
+    }
+    
+   .search-box {
+        border: 1px solid var(--border-color);
+        border-radius: 5px 0 0 5px;
+        /* CORREÇÃO: Garante que a borda direita exista no mobile para separação */
+        border-right: 1px solid var(--border-color); 
+    }
+    .filter-dropdown {
+        width: 120px;
+        border: 1px solid var(--border-color);
+        border-radius: 0 5px 5px 0;
+        /* CORREÇÃO: Remove o margin-left negativo que tentava sobrepor as bordas */
+        margin-left: 0; 
+        /* Reset de padding para mobile */
+        padding: 8px 10px; 
+    }
+
+    /* Ajusta o layout dos cards de alerta/pendência para mobile (vertical e horizontal) */
+    .alerts-section .d-flex {
+        flex-direction: column; 
+        gap: 10px !important;
+    }
+    .alerta-card {
+        width: 100%; 
+        flex-direction: row; /* Layout horizontal para alertas */
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 15px;
+    }
+    .alert-icon {
+        margin-right: 10px;
+        margin-bottom: 0;
+        font-size: 1.8em;
+    }
+    .alert-text {
+        font-size: 1.1em;
+    }
+    .alert-name {
+        margin-top: 0;
+        margin-left: auto; /* Empurra o nome para a direita */
+        text-align: right;
+    }
+    .hora-extra .alert-name {
+        display: flex;
+        align-items: center;
+    }
+}

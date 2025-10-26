@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clockin — Login</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login-card">
+      <div class="login-header">
+        <h1>Clockin</h1>
+        <div class="header-icons">
+          <button class="icon-btn" aria-label="Configurações">⚙️</button>
+          <button class="icon-btn" aria-label="Perfil">👤</button>
+        </div>
+      </div>
+
+      <!-- Abas de perfil -->
+      <div class="tabs" role="tablist" aria-label="Perfil de acesso">
+        <button
+          class="tab active"
+          id="tab-func"
+          role="tab"
+          aria-selected="true"
+          aria-controls="pane-func"
+        >
+          👤 Funcionário
+        </button>
+        <button
+          class="tab"
+          id="tab-adm"
+          role="tab"
+          aria-selected="false"
+          aria-controls="pane-adm"
+        >
+          ⚙️ Admin
+        </button>
+      </div>
+
+      <!-- Formulário único; o perfil é definido pela aba ativa -->
+      <form id="form-login" novalidate>
+        <label for="userId">User ID</label>
+        <input
+          id="userId"
+          name="userId"
+          type="text"
+          placeholder="Enter your user ID"
+          required
+        />
+
+        <label for="password">Password</label>
+        <input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Enter your password"
+          required
+        />
+
+        <input type="hidden" id="role" name="role" value="employee" />
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="error" id="error" hidden></p>
+      </form>
+    </main>
+
+    <script src="login.js"></script>
+  </body>
+</html>
