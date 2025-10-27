@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <main class="flex-grow-1 p-4">
+            <div class="container">
+                <div class="titlepage">
+                  <h1><strong>Dashboard</strong></h1>  
+                  <span class="legenda">Visão geral do seu sistema de RH</span>
+                </div>
+                <section class="viewsqrs row g-4 p-3">
+                    <div class="col-12 col-md-4" id="press">
+                        <div class="sqrinfo ">
+                            <p class="legenda">Presentes hoje</p>
+                            <h4><strong>38</strong></h4>
+                            <progress value="90" max="100"></progress>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4" id="hrsm">
+                        <div class="sqrinfo">
+                            <p class="legenda">Horas média/dia</p>
+                            <h4><strong>7.8h</strong></h4>
+                            <p class="legenda">Por funcionário</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4" id="func">
+                        <div class="sqrinfo">
+                            <p class="legenda">Funcionários</p>
+                            <h4><strong>40</strong></h4>
+                            <span class="legenda">+12% esse mês</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="alpd row g-4 p-3">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i>Alertas e pendências</h3>
+                    <div class="col-md-4" id="falt">
+                        <div class="sqrinfo ">
+                            <p class="legenda">Faltas</p>
+                            <h4>4</h4>
+                            <p class="legenda">Funcionários ausentes</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="atrs">
+                        <div class="sqrinfo">
+                            <p class="legenda">Atrasos</p>
+                            <h4>3</h4>
+                            <p class="legenda">Funcionários atrasados</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="turnov">
+                        <div class="sqrinfo">
+                            <p class="legenda">Turnover</p>
+                            <h4>2.3%</h4>
+                            <p class="legenda">Nos últimos 12 meses</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="tabelsind p-3 row g-4">
+                    <div class="tblst col-12 col-md-6">
+                        <h3>Atividade recente</h3>
+                        <ul id="atvr">
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                        </ul>
+                    </div>
+                        
+                    <div class="tblst col-12 col-md-6">
+                        <h3>Eventos Próximos</h3>
+                        <ul id="evp">
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                            <li class="tblst-item"></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <footer></footer>
+</body>
