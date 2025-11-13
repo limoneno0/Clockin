@@ -4,7 +4,7 @@
 Clockin é uma plataforma de gestão de Recursos Humanos desenvolvida para empresas, departamentos de RH e gestores que buscam otimizar o acompanhamento da jornada de trabalho de seus colaboradores. Oferece funcionalidades de controle de ponto, registro de frequência, administração de horários e relatórios de presença, trazendo mais transparência e eficiência para os processos de RH.
 
 ## Tecnologias Utilizadas
-- HTML, CSS, JavaScript
+- HTML, CSS, JavaScript e Uizard.
   
 ## Estrutura do Projeto
 A estrutura de diretórios foi definida com foco em escalabilidade, clareza e padronização, garantindo que qualquer desenvolvedor consiga entender e contribuir facilmente com o projeto. Essa divisão facilita a manutenção, permite a adição de novas funcionalidades sem comprometer o código existente e segue boas práticas de desenvolvimento. 
@@ -20,7 +20,7 @@ A estrutura de diretórios foi definida com foco em escalabilidade, clareza e pa
 - LICENSE → Define os termos de uso e permissões do projeto.
   
 ## Protótipo
-Link para o protótipo no Figma: [link]
+Link para o protótipo no Figma: https://app.uizard.io/p/289b8f3a/preview
 
 ## Integrantes
 - Clara Batista Cerqueira - Scrum Master e Designer de Interface de Usuário
@@ -33,5 +33,6 @@ Link para o protótipo no Figma: [link]
 Em desenvolvimento.
 
 Primeira versão estimada para: 10/25
+
 
 
