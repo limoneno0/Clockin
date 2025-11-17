@@ -310,3 +310,8 @@
         align-items: center;
     }
 }
+
+.tblst {
+    aspect-ratio: auto !important;
+    height: auto !important;
+}
