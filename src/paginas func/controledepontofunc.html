@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="css func/controledepontofunc.css">
+
+<div class="titlepage mb-4">
+    <h1><strong>Controle de Ponto</strong></h1>
+</div>
+
+<div class="dashboard-content">
+
+    <div class="clockin-action">
+        <button class="clockin-button-lg">
+            Bater Ponto <i class="fas fa-fingerprint"></i>
+        </button>
+    </div>
+
+    <div class="status-cards-grid">
+        <div class="status-card">
+            <div class="status-card-value">08:15</div>
+            <div class="status-card-label">Em expediente</div>
+        </div>
+        <div class="status-card">
+            <div class="status-card-value positive">+2h15</div>
+            <div class="status-card-label">Banco de Horas</div>
+        </div>
+        <div class="status-card">
+            <div class="status-card-value negative">7h45</div>
+            <div class="status-card-label">Horas Faltantes</div>
+        </div>
+    </div>
+
+    <section class="section-card">
+        <h2 class="section-title">Resumo</h2>
+        
+        <div class="summary-content">
+            <div class="summary-details">
+                <div class="summary-item">
+                    <span class="summary-label">Horas trabalhadas hoje</span>
+                    <span class="summary-value">0h15</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Saldo Diário</span>
+                    <span class="summary-value positive">+1h45</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Banco de Horas</span>
+                    <span class="summary-value">5h30</span>
+                </div>
+            </div>
+
+            <div class="summary-chart">
+                <div class="chart-bars">
+                    <!-- Configuração das 5 barras (4 visíveis + 1 invisível) -->
+                    <div class="chart-bar seg"></div> 
+                    <div class="chart-bar ter"></div>
+                    <div class="chart-bar qua"></div>
+                    <div class="chart-bar qui"></div>
+                    <div class="chart-bar" style="height: 0;"></div> 
+                </div>
+                <div class="chart-labels">
+                    <span>S</span>
+                    <span>T</span>
+                    <span>Q</span>
+                    <span>Q</span>
+                    <span>S</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-card">
+        <h2 class="section-title">Localização</h2>
+        <div class="location-content">
+            <p class="location-text">Escritório Central - Campinas</p>
+            <div class="location-authorized">
+                <i class="fas fa-check-circle"></i> Local Autorizado
+            </div>
+        </div>
+    </section>
+    
+    <section class="section-card">
+        <h2 class="section-title">Última Foto</h2>
+        
+        <div class="last-photo-content">
+            <div class="photo-details-wrapper">
+                <!-- Imagem de Perfil (usando placeholder para simular) -->
+                <img src="personas/Erika Oliveira.jpeg" alt="Última foto de ponto" class="profile-photo">
+                
+                <div class="photo-info">
+                    <p class="photo-label">Última foto</p>
+                    <a href="#" class="history-link">Ver Histórico Completo</a>
+                </div>
+            </div>
+            
+            <div class="photo-timestamp">
+                08:05
+            </div>
+        </div>
+    </section>
+
+</div>
