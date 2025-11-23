@@ -1,3 +1,5 @@
+/* style.css - Estilos gerais da aplicação */
+
 :root {
     --primary-blue: #007bff; 
     --border-color: #dee2e6; 
@@ -14,9 +16,9 @@
 
 body {
     background-color: #f9fafc;
-    /* min-width: 1024px; (REMOVIDO para responsividade) */
 }
 
+/* CABEÇALHO */
 .topoh {
     background-color: #fff;
     border-bottom: 1.5px solid #f2edee;
@@ -39,7 +41,7 @@ body {
     color: grey;
 }
 
-/* NOVO: Estilos do Overlay para Mobile (para fechar ao clicar fora) */
+/* Overlay para Mobile (para fechar ao clicar fora) */
 .sidebar-overlay {
     position: fixed;
     top: 0;
@@ -47,17 +49,17 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 1029; /* Abaixo da sidebar (1030) */
+    z-index: 1029;
     display: none; 
     cursor: pointer;
 }
 
+/* BARRA LATERAL */
 .sidebar {
     height: 100vh;
     width: 16rem;
     border-right: 1.5px solid #f2edee;
     background-color: #fff;
-    /* Estilos para fixar no desktop */
     position: sticky;
     top: 0;
     flex-shrink: 0; 
@@ -69,12 +71,11 @@ body {
     display: block;
 }
 
-/* CORREÇÃO DE ALINHAMENTO: Uso de Flexbox para centralizar ícones e texto */
+/* Alinhamento dos itens da sidebar */
 .sidebar-item {
-    display: flex; /* Habilita o Flexbox */
-    align-items: center; /* Centraliza verticalmente */
-    gap: 10px; /* Espaço entre o ícone e o texto */
-    
+    display: flex;
+    align-items: center;
+    gap: 10px;
     border-radius: 10px;
     padding: 0.6rem 1rem;
     margin: 0.3rem 0;
@@ -82,7 +83,7 @@ body {
 }
 
 .sidebar-item i {
-    min-width: 20px; /* Garante alinhamento consistente dos textos */
+    min-width: 20px;
     text-align: center;
 }
 
@@ -100,19 +101,16 @@ body {
 #logout-item .sidebar-item {
     color: blue;
     font-weight: 500;
-    /* Mantivemos as propriedades de alinhamento do .sidebar-item, apenas adicionamos cor e peso de fonte */
-    /* Removemos 'display: flex', 'align-items', 'gap', 'padding' pois já estão no .sidebar-item */
-    margin-top: auto; /* Mantido se for para o item ir para o rodapé */
+    margin-top: auto;
 }
 
-/* SUBSTITUÍMOS .sidebar-footer i PELA REGRA PARA O ÍCONE DO NOVO ITEM SAIR */
 #logout-item .sidebar-item i {
     color: blue;
 }
 
+/* CONTEÚDO PRINCIPAL */
 main {
     background-color: #f9fafc;
-    /* Garante que o conteúdo principal ocupe o espaço restante */
     min-height: calc(100vh - 56px);
 }
 
@@ -132,151 +130,36 @@ main {
     color: #333;
 }
 
-
-/* --- SEÇÃO DE RESPONSIVIDADE MOBILE (Media Queries) --- */
-
-/* Aplicar estilos quando a largura da tela for no máximo 991.98px (Mobile/Tablet) */
+/* --- RESPONSIVIDADE MOBILE --- */
 @media (max-width: 991.98px) {
     
     /* CABEÇALHO */
     .topoh-info #nome,
     .topoh-info #email {
-        /* Ocultar nome completo e email no cabeçalho em telas menores */
         display: none !important; 
     }
     
     .sidebar-brand .legenda {
-        /* Ocultar a legenda em telas menores */
         display: none !important;
     }
 
     /* BARRA LATERAL (Inicia fora da tela) */
     .sidebar {
         position: fixed; 
-        left: -16rem; /* Esconde a sidebar fora da tela */
+        left: -16rem;
         top: 0;
         bottom: 0;
-        z-index: 1030; /* Acima do overlay */
-        transition: left 0.3s ease; /* Adiciona transição suave */
+        z-index: 1030;
+        transition: left 0.3s ease;
         height: 100%;
         box-shadow: 2px 0 5px rgba(0,0,0,0.1);
     }
 
-    /* Classe que será adicionada via JavaScript para mostrar a sidebar */
     .sidebar.open {
         left: 0;
     }
 
-    /* Oculta o brand de desktop (ClockIn) dentro do cabeçalho */
     .topoh .sidebar-brand {
         display: none !important;
     }
-}
-
-.sqrinfo {
-  background-color: #fff;
-  border: 1px solid #f2edee;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  width: 245px;
-  height: 120px;
-}
-#press h4
-{
-    color: green;
-}
-
-#press progress {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: auto;
-    border-radius: 80px;
-    overflow: hidden;
-    width: 80%; 
-    height: 10px; 
-}
-
-#press progress::-webkit-progress-bar {
-    background-color: lightgray;
-}
-
-#press progress::-webkit-progress-value {
-    background-color: green;
-}
-
-#press progress::-moz-progress-bar {
-    background-color: green;
-}
-#hrsm h4
-{
-    color: orange;
-}
-#func h4
-{
-    color: blue;
-}
-#func span
-{
-    color: green;
-}
-.alpd
-{
-    background-color: #fff;
-    margin: 1rem;
-    border-radius: 10px;
-    font-size: 0.875rem;
-}
-.alpd h3
-{
-    font-size: 1.23rem;
-}
-#falt .sqrinfo
-{
-    background-color: rgb(255, 228, 228);
-    border: 1px solid red;
-    color: red;
-}
-#falt .legenda
-{
-    color: red;
-}
-#atrs .sqrinfo
-{
-    background-color: rgb(255, 244, 224);
-    border: 1px solid orange;
-    color: orange;
-}
-#atrs .legenda
-{
-    color: orange;
-}
-#turnov .sqrinfo
-{
-    background-color: rgb(237, 248, 255);
-    border: 1px solid rgb(0, 60, 255);
-    color: rgb(0, 60, 255);
-}
-#turnov .legenda
-{
-    color: rgb(0, 60, 255);
-}
-.tblst
-{
-    background-color: #fff;
-    border: 1px solid #f2edee;
-    border-radius: 10px;
-    aspect-ratio: 2/1;
-}
-.tblst h3
-{
-    font-size: 14px;
-    font-weight: normal;
-}
-.tblst-item
-{
-    list-style: none;
-    border-radius: 10px;
-    background-color: #f2edee;
 }
