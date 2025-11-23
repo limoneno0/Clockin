@@ -1,0 +1,82 @@
+:root {
+    --input-readonly-bg: #f8f9fa; 
+}
+
+.card-info-conta-edit {
+    background-color: #fff;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    padding: 25px; 
+    width: 100%;
+    max-width: 450px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin: 0 auto; 
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.form-group-edit {
+    margin-bottom: 15px;
+}
+
+.form-group-edit label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-control-edit {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    color: #333;
+}
+
+.form-control-edit[readonly] {
+    background-color: var(--input-readonly-bg); 
+    pointer-events: none; 
+}
+
+.form-control-edit.editable {
+    background-color: #fff; 
+    pointer-events: auto;
+}
+
+.btn-primary-custom-edit {
+    background-color: var(--primary-blue);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block; 
+    width: 100%;
+}
+
+.btn-primary-custom-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-success-feedback {
+    background-color: #28a745 !important; 
+    border-color: #28a745 !important;
+    cursor: default !important;
+    opacity: 0.9;
+    transition: all 0.5s ease;
+}
+
+.btn-success-feedback:hover {
+    background-color: #28a745 !important; 
+}
