@@ -1,0 +1,122 @@
+/* Título da página */
+.titlepage h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Cards de informação quadrados */
+.sqrinfo {
+    background-color: #fff;
+    border: 1px solid #f2edee;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    width: 245px;
+    height: 120px;
+}
+
+/* Card de Presença */
+#press h4 {
+    color: green;
+}
+
+#press progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: auto;
+    border-radius: 80px;
+    overflow: hidden;
+    width: 80%; 
+    height: 10px; 
+}
+
+#press progress::-webkit-progress-bar {
+    background-color: lightgray;
+}
+
+#press progress::-webkit-progress-value {
+    background-color: green;
+}
+
+#press progress::-moz-progress-bar {
+    background-color: green;
+}
+
+/* Card de Horas do Mês */
+#hrsm h4 {
+    color: orange;
+}
+
+/* Card de Funcionários */
+#func h4 {
+    color: blue;
+}
+
+#func span {
+    color: green;
+}
+
+/* Container de alertas/pendências */
+.alpd {
+    background-color: #fff;
+    margin: 1rem;
+    border-radius: 10px;
+    font-size: 0.875rem;
+}
+
+.alpd h3 {
+    font-size: 1.23rem;
+}
+
+/* Card de Faltas */
+#falt .sqrinfo {
+    background-color: rgb(255, 228, 228);
+    border: 1px solid red;
+    color: red;
+}
+
+#falt .legenda {
+    color: red;
+}
+
+/* Card de Atrasos */
+#atrs .sqrinfo {
+    background-color: rgb(255, 244, 224);
+    border: 1px solid orange;
+    color: orange;
+}
+
+#atrs .legenda {
+    color: orange;
+}
+
+/* Card de Turnover */
+#turnov .sqrinfo {
+    background-color: rgb(237, 248, 255);
+    border: 1px solid rgb(0, 60, 255);
+    color: rgb(0, 60, 255);
+}
+
+#turnov .legenda {
+    color: rgb(0, 60, 255);
+}
+
+/* Tabela de estatísticas */
+.tblst {
+    background-color: #fff;
+    border: 1px solid #f2edee;
+    border-radius: 10px;
+    aspect-ratio: 2/1;
+}
+
+.tblst h3 {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.tblst-item {
+    list-style: none;
+    border-radius: 10px;
+    background-color: #f2edee;
+}
