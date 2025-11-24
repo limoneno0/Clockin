@@ -1,1 +1,101 @@
+<link rel="stylesheet" href="css func/faltas.css">
 
+<div class="titlepage mb-4">
+    <h1><strong>Faltas, Presenças e Atrasos</strong></h1>
+</div>
+
+<div class="dashboard-content">
+    
+    <section class="profile-card">
+        <div class="profile-image-container">
+            <img src="personas/Erika Oliveira.jpeg" alt="Foto de Érica Oliveira" class="profile-image">
+        </div>
+        <div class="profile-info">
+            <h2 class="profile-name">Érica Oliveira</h2>
+            <p class="profile-role">Designer Gráfica</p>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <h2 class="section-title">Filtros</h2>
+        
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="mes">Mês</label>
+                <select id="mes" class="select-month">
+                    <option value="2025-12">Dezembro 2025</option>
+                    <option value="2025-11" selected>Novembro 2025</option>
+                    <option value="2025-10">Outubro 2025</option>
+                    <option value="2025-09">Setembro 2025</option>
+                    <option value="2025-08">Agosto 2025</option>
+                    <option value="2025-07">Julho 2025</option>
+                    <option value="2025-06">Junho 2025</option>
+                    <option value="2025-05">Maio 2025</option>
+                    <option value="2025-04">Abril 2025</option>
+                    <option value="2025-03">Março 2025</option>
+                    <option value="2025-02">Fevereiro 2025</option>
+                    <option value="2025-01">Janeiro 2025</option>
+                </select>
+            </div>
+            <div class="filter-buttons">
+                <button type="button" id="aplicar" class="btn-apply">Aplicar</button>
+                <button type="button" id="exportar" class="btn-export">Exportar CSV</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <h2 class="section-title">Resumo de Novembro 2025</h2>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="kpiDias">22</div>
+                <div class="stat-label">Dias</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="kpiFalt">3</div>
+                <div class="stat-label">Dias faltantes</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="kpiAtr">5</div>
+                <div class="stat-label">Atrasos</div>
+            </div>
+            <div class="stat-card donut-card">
+                <svg viewBox="0 0 36 36" class="donut-chart" aria-hidden="true">
+                    <circle cx="18" cy="18" r="16" fill="none" stroke="#e5e7eb" stroke-width="4"></circle>
+                    <circle id="arc" cx="18" cy="18" r="16" fill="none" stroke="#007bff" stroke-width="4" 
+                            stroke-linecap="round" stroke-dasharray="92 100" transform="rotate(-90 18 18)"></circle>
+                </svg>
+                <div class="donut-center">
+                    <div class="donut-percentage" id="pct">92%</div>
+                    <div class="donut-label">Presença</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="records-section">
+        <h2 class="section-title">Registros Diários</h2>
+        
+        <div class="table-container">
+            <table class="records-table">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Entrada</th>
+                        <th>Saída</th>
+                        <th>Atraso</th>
+                        <th>Justificativa</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- Dados serão inseridos via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<script src="scriptfunc.js"></script>
