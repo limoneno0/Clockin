@@ -1,1 +1,492 @@
+:root {
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --border: #e6e8ef;
+  --text: #0f172a;
+  --text-2: #475569;
+  --primary: #2f6fed;
+  --primary-50: #eef3ff;
+  --ok: #16a34a;
+  --warn: #f59e0b;
+  --danger: #ef4444;
+  --radius: 12px;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Título da página */
+.titlepage {
+  margin-bottom: 24px;
+}
+
+.titlepage h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.mb-4 {
+  margin-bottom: 24px;
+}
+
+/* Container principal */
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Card de perfil */
+.profile-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.profile-image-container {
+  flex-shrink: 0;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.profile-role {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+/* Seção de filtros */
+.filter-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.select-month {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.select-month:hover {
+  border-color: var(--primary);
+}
+
+.select-month:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.1);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-apply,
+.btn-export {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-apply {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.btn-apply:hover {
+  opacity: 0.9;
+}
+
+.btn-export {
+  background: var(--surface);
+  color: var(--text);
+}
+
+.btn-export:hover {
+  background: #f3f5f9;
+}
+
+/* Seção de estatísticas */
+.stats-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-2);
+  font-weight: 500;
+}
+
+.donut-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.donut-chart {
+  width: 100px;
+  height: 100px;
+}
+
+.donut-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.donut-percentage {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.donut-label {
+  font-size: 12px;
+  color: var(--text-2);
+  margin-top: -2px;
+}
+
+/* Seção de registros */
+.records-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.08);
+}
+
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 16px;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.records-table thead th {
+  text-align: left;
+  color: var(--text-2);
+  font-weight: 600;
+  padding: 12px 16px;
+  background: var(--bg);
+  border-bottom: 2px solid var(--border);
+}
+
+.records-table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.records-table tbody tr:hover {
+  background: var(--bg);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.presente {
+  background: #ecfdf5;
+  color: var(--ok);
+}
+
+.status.atraso {
+  background: #fffbeb;
+  color: var(--warn);
+}
+
+.status.falta {
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titlepage h1 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile e Tablets pequenos (até 768px) */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 16px;
+  }
+
+  .titlepage h1 {
+    font-size: 20px;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .profile-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .profile-name {
+    font-size: 20px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  .filter-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .btn-apply,
+  .btn-export {
+    width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tabela em formato de cards no mobile */
+  .table-container {
+    overflow-x: visible;
+  }
+
+  .records-table {
+    display: block;
+  }
+
+  .records-table thead {
+    display: none;
+  }
+
+  .records-table tbody {
+    display: block;
+  }
+
+  .records-table tbody tr {
+    display: block;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 12px;
+    padding: 14px;
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  }
+
+  .records-table tbody td {
+    display: block;
+    border: none;
+    padding: 10px 0;
+    padding-left: 40%;
+    position: relative;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .records-table tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .records-table tbody td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 38%;
+    font-weight: 600;
+    color: var(--text-2);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .records-table tbody tr:hover {
+    background: var(--surface);
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 12px;
+  }
+
+  .titlepage h1 {
+    font-size: 18px;
+  }
+
+  .profile-card {
+    padding: 16px;
+  }
+
+  .profile-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .profile-name {
+    font-size: 18px;
+  }
+
+  .profile-role {
+    font-size: 14px;
+  }
+
+  .filter-section,
+  .stats-section,
+  .records-section {
+    padding: 16px;
+  }
+
+  .section-title {
+    font-size: 16px;
+  }
+
+  .stat-value {
+    font-size: 28px;
+  }
+
+  .donut-chart {
+    width: 80px;
+    height: 80px;
+  }
+
+  .donut-percentage {
+    font-size: 18px;
+  }
+}
