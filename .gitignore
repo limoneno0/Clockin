@@ -1,0 +1,31 @@
+# Sistema Operacional - macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Sistema Operacional - Windows
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# IDE - Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+logs/
+
+# Arquivos Temporários
+tmp/
+temp/
+*.tmp
+
+# Backups
+*.bak
+*.backup
+*.old
+
+# Cache
+.cache/
