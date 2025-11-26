@@ -28,12 +28,15 @@
     </div>
 
     <section class="section-card">
-        <h2 class="section-title">Resumo</h2>
+        <div class="summary-header">
+            <h2 class="section-title" style="margin-bottom: 0;">Resumo</h2>
+            <h2 class="section-title" style="margin-bottom: 0;">Horas Trabalhadas por Dia</h2>
+        </div>
         
         <div class="summary-content">
             <div class="summary-details">
                 <div class="summary-item">
-                    <span class="summary-label">Horas trabalhadas hoje</span>
+                    <span class="summary-label">Horas Trabalhadas Hoje</span>
                     <span class="summary-value">0h15</span>
                 </div>
                 <div class="summary-item">
@@ -46,9 +49,10 @@
                 </div>
             </div>
 
+            <h2 class="chart-title-mobile">Horas Trabalhadas por Dia</h2>
+
             <div class="summary-chart">
                 <div class="chart-bars">
-                    <!-- Configuração das 5 barras (4 visíveis + 1 invisível) -->
                     <div class="chart-bar seg"></div> 
                     <div class="chart-bar ter"></div>
                     <div class="chart-bar qua"></div>
@@ -81,17 +85,30 @@
         
         <div class="last-photo-content">
             <div class="photo-details-wrapper">
-                <!-- Imagem de Perfil (usando placeholder para simular) -->
-                <img src="personas/Erika Oliveira.jpeg" alt="Última foto de ponto" class="profile-photo">
+                <img src="personas/selfie.png" alt="Última foto de ponto" class="profile-photo">
                 
                 <div class="photo-info">
                     <p class="photo-label">Última foto</p>
-                    <a href="#" class="history-link">Ver Histórico Completo</a>
+                    <a href="#" class="history-link" id="showHistoryBtn">Ver Histórico Completo</a>
                 </div>
             </div>
             
             <div class="photo-timestamp">
                 08:05
+            </div>
+        </div>
+
+        <!-- Seção de Galeria (inicialmente oculta) -->
+        <div class="photo-gallery-section" id="photoGallery" style="display: none;">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Histórico de Fotos</h3>
+                <button class="close-gallery-btn" id="closeGalleryBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="photo-grid" id="photoGrid">
+                <!-- As fotos serão inseridas aqui via JavaScript -->
             </div>
         </div>
     </section>
