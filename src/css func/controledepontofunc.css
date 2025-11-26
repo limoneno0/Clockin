@@ -15,7 +15,6 @@ body {
     margin: 0;
 }
 
-/* Base de Seções e Cards */
 .section-card {
     background-color: var(--background-white);
     padding: 25px;
@@ -37,7 +36,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- 1. Botão Principal Bater Ponto --- */
 .clockin-action {
     margin-bottom: 20px;
     display: flex;
@@ -62,21 +60,21 @@ body {
     background-color: #0056b3;
 }
 
-/* --- 2. Cards de Status (09:47, Banco de Horas, Horas Faltantes) --- */
 .status-cards-grid {
     display: flex;
-    gap: 15px; /* Espaço entre os cards */
+    gap: 15px;
     margin-bottom: 20px;
 }
 
 .status-card {
-    flex-grow: 1; /* Faz com que cada card ocupe um terço do espaço */
+    flex: 1;
     padding: 15px;
     border-radius: 6px;
     border: 1px solid var(--border-color);
     background-color: var(--background-white);
     text-align: center;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    min-width: 0;
 }
 
 .status-card-value {
@@ -91,7 +89,6 @@ body {
     color: var(--text-light);
 }
 
-/* Cores específicas para os valores */
 .positive {
     color: var(--positive-green);
 }
@@ -100,7 +97,12 @@ body {
     color: var(--negative-red);
 }
 
-/* --- 3. Resumo (Tabelas e Gráfico) --- */
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
 .summary-content {
     display: flex;
     justify-content: space-between;
@@ -108,7 +110,7 @@ body {
 }
 
 .summary-details {
-    flex-basis: 50%; /* Ocupa metade do espaço para os detalhes */
+    flex-basis: 50%;
 }
 
 .summary-item {
@@ -127,18 +129,17 @@ body {
     font-weight: 600;
 }
 
-/* Gráfico (Simulação) */
 .summary-chart {
-    flex-basis: 50%; /* Ocupa metade do espaço para o gráfico */
+    flex-basis: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .chart-bars {
     display: flex;
-    align-items: flex-end; /* As barras começam de baixo */
+    align-items: flex-end;
     height: 75px;
     gap: 10px; 
     width: 75%;
@@ -152,7 +153,6 @@ body {
     transition: height 0.3s;
 }
 
-/* Alturas ajustadas conforme o pedido anterior (exemplo de ajuste) */
 .chart-bar.seg { height: 80%; background-color: #e9ecef; }
 .chart-bar.ter { height: 95%; background-color: #e9ecef; }
 .chart-bar.qua { height: 90%; background-color: #e9ecef; }
@@ -169,6 +169,10 @@ body {
 
 .chart-labels span {
     text-align: center;
+}
+
+.chart-title-mobile {
+    display: none;
 }
 
 .location-text {
@@ -188,8 +192,6 @@ body {
     margin-right: 5px;
 }
 
-/* --- NOVO CARD: Última Foto --- */
-
 .last-photo-content {
     display: flex;
     justify-content: space-between;
@@ -206,7 +208,7 @@ body {
 .profile-photo {
     width: 50px;
     height: 50px;
-    border-radius: 50%; /* Torna a imagem circular */
+    border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--border-color);
 }
@@ -228,6 +230,7 @@ body {
     font-size: 0.9rem;
     text-decoration: none;
     transition: color 0.2s;
+    cursor: pointer;
 }
 
 .history-link:hover {
@@ -238,4 +241,185 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--text-dark);
+}
+
+/* Estilos da Galeria de Fotos */
+.photo-gallery-section {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.gallery-title {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+    margin: 0;
+}
+
+.close-gallery-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.close-gallery-btn:hover {
+    color: var(--text-dark);
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.photo-grid-item {
+    position: relative;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.photo-grid-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.photo-grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-grid-item-time {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 8px 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 768px) {
+    .status-card {
+        padding: 10px 8px;
+    }
+    
+    .status-card-value {
+        font-size: 1.1rem;
+    }
+    
+    .status-card-label {
+        font-size: 0.9rem;
+    }
+    
+    .status-card-value.positive {
+        padding-right: 0.3em;
+    }
+    
+    .status-card-value.negative {
+        padding-left: 0.3em;
+    }
+    
+    .summary-header {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 0;
+    }
+    
+    .summary-header h2:first-child {
+        order: 1;
+        margin-bottom: 15px;
+    }
+    
+    .summary-header h2:last-child {
+        display: none;
+    }
+    
+    .summary-content {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .summary-details {
+        order: 1;
+        flex-basis: 100%;
+        width: 100%;
+    }
+    
+    .chart-title-mobile {
+        display: block;
+        order: 2;
+        margin: 20px 0 15px 0;
+        text-align: center;
+        font-size: 1.2rem;
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+    
+    .summary-chart {
+        order: 3;
+        flex-basis: 100%;
+        width: 100%;
+    }
+    
+    .summary-item {
+        flex-wrap: nowrap;
+        white-space: nowrap;
+    }
+    
+    .summary-label {
+        white-space: nowrap;
+    }
+    
+    .location-content,
+    .last-photo-content {
+        padding: 10px 0;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+    }
+}
+
+/* Estilos para Desktop */
+@media (min-width: 769px) {
+    .chart-title-mobile {
+        display: none !important;
+    }
+    
+    .summary-header h2:last-child {
+        display: block !important;
+    }
 }
