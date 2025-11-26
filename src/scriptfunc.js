@@ -93,6 +93,18 @@ const DATASETS_FALTAS = {
   }
 };
 
+// --- DADOS SIMULADOS DE FOTOS ---
+const photoHistory = [
+    { date: '26/11', time: '08:05', image: 'personas/selfie.png' },
+    { date: '25/11', time: '08:02', image: 'personas/selfie2.jpg' },
+    { date: '24/11', time: '08:09', image: 'personas/selfie3.jpg' },
+    { date: '23/11', time: '08:17', image: 'personas/selfie4.jpg' },
+    { date: '22/11', time: '08:07', image: 'personas/selfie2.jpg' },
+    { date: '21/11', time: '09:04', image: 'personas/selfie.png' },
+    { date: '20/11', time: '08:46', image: 'personas/selfie4.jpg' },
+    { date: '19/11', time: '08:12', image: 'personas/selfie2.jpg' },
+];
+
 // --- FUNÇÕES DE MENU RESPONSIVO ---
 function inicializarMenuResponsivo() {
     const menuToggle = document.getElementById('menu-toggle');
@@ -141,7 +153,7 @@ function carregarPagina(pagina) {
             if (pagina === "dashboardfunc") inicializarDashboard?.();
             if (pagina === "configuracoes1func") inicializarConfiguracoes1?.();
             if (pagina === "configuracoes2func") inicializarConfiguracoes2?.();
-            if (pagina === "controledepontofunc") inicializarControleDePonto?.();
+            if (pagina === "controledepontofunc") inicializarControleDePonto();
             if (pagina === "faltas") inicializarFaltas();
         })
         .catch(err => console.error("Erro ao carregar página:", err));
@@ -223,6 +235,54 @@ function inicializarConfiguracoes2() {
             saveButton.classList.remove('btn-success-feedback');
             saveButton.disabled = false;
         }, 3000);
+    });
+}
+
+// --- CONTROLE DE PONTO (GALERIA DE FOTOS) ---
+function inicializarControleDePonto() {
+    const showHistoryBtn = document.getElementById('showHistoryBtn');
+    const closeGalleryBtn = document.getElementById('closeGalleryBtn');
+    const photoGallery = document.getElementById('photoGallery');
+    const photoGrid = document.getElementById('photoGrid');
+
+    // Verificar se os elementos existem
+    if (!showHistoryBtn || !closeGalleryBtn || !photoGallery || !photoGrid) {
+        console.error("Elementos da galeria de fotos não encontrados");
+        return;
+    }
+
+    // Função para mostrar a galeria
+    showHistoryBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Limpa o grid antes de adicionar novas fotos
+        photoGrid.innerHTML = '';
+        
+        // Adiciona as fotos ao grid
+        photoHistory.forEach(photo => {
+            const photoItem = document.createElement('div');
+            photoItem.className = 'photo-grid-item';
+            
+            photoItem.innerHTML = `
+                <img src="${photo.image}" alt="Foto de ponto ${photo.date} ${photo.time}">
+                <div class="photo-grid-item-time">${photo.date} - ${photo.time}</div>
+            `;
+            
+            photoGrid.appendChild(photoItem);
+        });
+        
+        // Mostra a galeria com animação
+        photoGallery.style.display = 'block';
+        
+        // Scroll suave até a galeria
+        setTimeout(() => {
+            photoGallery.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 100);
+    });
+
+    // Função para fechar a galeria
+    closeGalleryBtn.addEventListener('click', function() {
+        photoGallery.style.display = 'none';
     });
 }
 
