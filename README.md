@@ -18,9 +18,11 @@ A estrutura de diretórios foi definida com foco em escalabilidade, clareza e pa
 - README.md → Documento principal do projeto, apresentando objetivos, funcionalidades e instruções de uso.
 - .gitignore → Lista arquivos e pastas que devem ser ignorados (ex.: node_modules, .env), evitando excesso de conteúdo desnecessário no repositório.
 - LICENSE → Define os termos de uso e permissões do projeto.
+
+Observação: para visualizar e testar o projeto localmente, é necessário abrir primeiro o arquivo index.html.
   
 ## Protótipo
-Link para o protótipo no Figma: https://app.uizard.io/p/289b8f3a/preview
+Link para o protótipo no Uizard: https://app.uizard.io/p/289b8f3a/preview
 
 ## Integrantes
 - Clara Batista Cerqueira - Scrum Master e Designer de Interface de Usuário
@@ -33,6 +35,7 @@ Link para o protótipo no Figma: https://app.uizard.io/p/289b8f3a/preview
 Em desenvolvimento.
 
 Primeira versão estimada para: 10/25
+
 
 
 
