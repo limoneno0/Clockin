@@ -19,7 +19,7 @@ A estrutura de diretórios foi definida com foco em escalabilidade, clareza e pa
 - .gitignore → Lista arquivos e pastas que devem ser ignorados (ex.: node_modules, .env), evitando excesso de conteúdo desnecessário no repositório.
 - LICENSE → Define os termos de uso e permissões do projeto.
 
-Observação: para visualizar e testar o projeto localmente, é necessário abrir primeiro a página login.html, que contém a primeira tela do sistema. 
+Observação: para visualizar e testar o projeto localmente, é necessário abrir primeiro a página login.html, que contém a tela inicial do sistema. 
   
 ## Protótipo
 Link para o protótipo no Uizard: https://app.uizard.io/p/289b8f3a/preview
@@ -35,6 +35,7 @@ Link para o protótipo no Uizard: https://app.uizard.io/p/289b8f3a/preview
 Em desenvolvimento.
 
 Primeira versão estimada para: 10/25
+
 
 
 
