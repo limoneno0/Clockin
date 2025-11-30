@@ -195,7 +195,7 @@ function checkAuth() {
 function sair() {
     localStorage.removeItem('clockin:token');
     localStorage.removeItem('clockin:user');
-    window.location.href = "../src/login.html";
+    window.location.href = "../src/login/login.html";
 }
 
 // --- INICIALIZAÇÃO ---
