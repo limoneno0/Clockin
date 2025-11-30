@@ -95,14 +95,14 @@ const DATASETS_FALTAS = {
 
 // --- DADOS SIMULADOS DE FOTOS ---
 const photoHistory = [
-    { date: '26/11', time: '08:05', image: 'personas/selfie.png' },
-    { date: '25/11', time: '08:02', image: 'personas/selfie2.jpg' },
-    { date: '24/11', time: '08:09', image: 'personas/selfie3.jpg' },
-    { date: '23/11', time: '08:17', image: 'personas/selfie4.jpg' },
-    { date: '22/11', time: '08:07', image: 'personas/selfie2.jpg' },
-    { date: '21/11', time: '09:04', image: 'personas/selfie.png' },
-    { date: '20/11', time: '08:46', image: 'personas/selfie4.jpg' },
-    { date: '19/11', time: '08:12', image: 'personas/selfie2.jpg' },
+    { date: '26/11', time: '08:05', image: 'assets/selfie.png' },
+    { date: '25/11', time: '08:02', image: 'assets/selfie2.jpg' },
+    { date: '24/11', time: '08:09', image: 'assets/selfie3.jpg' },
+    { date: '23/11', time: '08:17', image: 'assets/selfie4.jpg' },
+    { date: '22/11', time: '08:07', image: 'assets/selfie2.jpg' },
+    { date: '21/11', time: '09:04', image: 'assets/selfie.png' },
+    { date: '20/11', time: '08:46', image: 'assets/selfie4.jpg' },
+    { date: '19/11', time: '08:12', image: 'assets/selfie2.jpg' },
 ];
 
 // --- FUNÇÕES DE MENU RESPONSIVO ---
