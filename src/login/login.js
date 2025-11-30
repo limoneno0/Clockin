@@ -72,11 +72,17 @@ function initializeForm() {
                     submitButton.textContent = '✓ Login realizado!';
                     submitButton.style.background = '#059669';
 
-                    // Redireciona para index.html
+                    // Redireciona para a página correta
                     setTimeout(() => {
                         alert(`Login realizado com sucesso!\nUsuário: ${userData.name}\nPapel: ${currentRole}`);
-                        window.location.href = "../index.html";
+
+                        if (currentRole === 'employee') {
+                            window.location.href = "../indexfunc.html";
+                        } else {
+                            window.location.href = "../index.html";
+                        }
                     }, 700);
+
                 } catch (err) {
                     showError('Erro ao gerar token JWT.');
                     resetButton();
@@ -92,9 +98,6 @@ function initializeForm() {
 
 /**
  * Gera um token JWT compatível com jwt.io
- * @param {string} userId - ID do usuário
- * @param {string} role - Papel do usuário
- * @returns {Promise<string>} Token JWT real e verificável
  */
 async function generateJwtToken(userId, role) {
     const header = {
@@ -105,11 +108,11 @@ async function generateJwtToken(userId, role) {
     const payload = {
         sub: userId,
         role: role,
-        exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60), // expira em 24h
+        exp: Math.floor(Date.now() / 1000) + (24 * 60 * 60),
         iat: Math.floor(Date.now() / 1000)
     };
 
-    const secret = "meuSegredoSuperSecreto123"; // use o mesmo no jwt.io
+    const secret = "meuSegredoSuperSecreto123";
 
     function base64UrlEncode(obj) {
         return btoa(JSON.stringify(obj))
@@ -145,7 +148,6 @@ async function generateJwtToken(userId, role) {
 
 /**
  * Verifica se há um JWT válido salvo no localStorage
- * @returns {boolean} True se autenticado e token válido
  */
 function checkAuth() {
     const token = localStorage.getItem('clockin:token');
@@ -173,13 +175,11 @@ function checkAuth() {
     }
 }
 
-
 function showError(message) {
     const errorElement = document.getElementById('error');
     errorElement.textContent = message;
     errorElement.hidden = false;
 }
-
 
 function resetButton() {
     const submitButton = document.querySelector('.btn');
@@ -188,3 +188,5 @@ function resetButton() {
     submitButton.textContent = 'Login';
     submitButton.style.background = 'var(--primary)';
 }
+
+
