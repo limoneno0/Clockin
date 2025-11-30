@@ -60,11 +60,11 @@ function carregarPagina(pagina) {
 // --- INICIALIZAÇÃO DE FUNCIONÁRIOS ---
 function inicializarFuncionariosPage() {
     const funcionarios = [
-        { id: 1, nome: "Ana Souza", cargo: "Analista Comercial", setor: "Comercial", status: "Ativo", foto: "personas/Ana souza.jpeg" },
-        { id: 2, nome: "Carlos Lima", cargo: "Suporte Técnico", setor: "TI", status: "Férias", foto: "personas/Carlos lima.jpeg" },
-        { id: 3, nome: "Júlia Dantas", cargo: "Desenvolvedora", setor: "TI", status: "Ativo", foto: "personas/Julia Dantas.jpeg" },
-        { id: 4, nome: "Pedro Gomes", cargo: "Designer Gráfico", setor: "Marketing", status: "Ativo", foto: "personas/Pedro Gomes.jpeg" },
-        { id: 5, nome: "Érica Oliveira", cargo: "Designer Gráfica", setor: "Marketing", status: "Ativo", foto: "personas/Erika Oliveira.jpeg" }
+        { id: 1, nome: "Ana Souza", cargo: "Analista Comercial", setor: "Comercial", status: "Ativo", foto: "../assets/Ana souza.jpeg" },
+        { id: 2, nome: "Carlos Lima", cargo: "Suporte Técnico", setor: "TI", status: "Férias", foto: "../assets/Carlos lima.jpeg" },
+        { id: 3, nome: "Júlia Dantas", cargo: "Desenvolvedora", setor: "TI", status: "Ativo", foto: "../assets/Julia Dantas.jpeg" },
+        { id: 4, nome: "Pedro Gomes", cargo: "Designer Gráfico", setor: "Marketing", status: "Ativo", foto: "../assets/Pedro Gomes.jpeg" },
+        { id: 5, nome: "Érica Oliveira", cargo: "Designer Gráfica", setor: "Marketing", status: "Ativo", foto: "../assets/Erika Oliveira.jpeg" }
     ];
 
     const tbody = document.querySelector("#table tbody");
