@@ -1,3 +1,9 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 /* Título da página */
 .titlepage h1 {
     font-size: 1.5rem;
@@ -119,4 +125,73 @@
     list-style: none;
     border-radius: 10px;
     background-color: #f2edee;
+}
+#formev{
+display: none;
+
+}
+.legenda {
+    font-size: 0.875rem;
+    color: grey;
+}
+.iframe-card
+{
+    border: 1px solid #f2edee;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin:0.75rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto; 
+    align-items: center;
+    gap: 1rem;
+}
+.iframe-categ
+{
+    background-color: #fff;
+    border: 1px solid #f2edee;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+}
+.iframe-button
+{
+    background-color: #f2edee;
+    border: 1px solid #000;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+}
+.iframe-title h3
+{
+    font-size: 3.5rem;
+    padding: 0.25rem;
+}
+.iframe-form {
+    border: 1px solid #f2edee;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 0.75rem;
+}
+
+/* AQUI É O QUE FALTAVA */
+.iframe-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* espaçamento entre cada item */
+}
+
+.iframe-form input,
+.iframe-form select,
+.iframe-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #d8d4d5;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+/* deixa labels bonitinhos */
+.iframe-form label {
+    font-size: 0.9rem;
+    margin-bottom: -0.4rem; /* cola o label ao input */
 }

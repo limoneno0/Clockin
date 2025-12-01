@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+
+let titulo = urlParams.get('titulo')
+let inicioev = urlParams.get('inicioev')
+let fimev = urlParams.get('fimev')
+let localev = urlParams.get('localev')
+let descricao = urlParams.get('descricao')
+
+console.log(titulo)
+console.log(inicioev)
+console.log(fimev)
+console.log(localev)
+console.log(descricao)
+
+
+
+
+const botao = document.getElementById('botao');
+window.location = 'eventos.html?titulo='+titulo+'&inicioev='+inicioev+'&fimev='+fimev+'&localev='+localev+'&descricao='+descricao
+
+
+
+
+</script>
+
+
+</html>
