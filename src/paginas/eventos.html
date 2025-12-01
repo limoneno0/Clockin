@@ -10,12 +10,12 @@
     <div class="container">
     <section id="formev" class="iframe-form">
         <form action="agenda2.html">
-            <input type="text" name="titulo" id="titulo" placeholder="Título do evento" aria-placeholder="Título do evento">
+            <input type="text" name="titulo" id="titulo" placeholder="Título do evento" aria-placeholder="Título do evento" required>
             <label for="inicioev">Início:</label>
-            <input type="datetime-local" name="inicioev" id="inicioev">
+            <input type="datetime-local" name="inicioev" id="inicioev" required>
             <label for="fimev">Fim:</label>
-            <input type="datetime-local" name="fimev" id="fimev">
-            <input type="text" name="localev" id="localev" placeholder="Local do evento" aria-placeholder="Local do evento">
+            <input type="datetime-local" name="fimev" id="fimev" required>
+            <input type="text" name="localev" id="localev" placeholder="Local do evento" aria-placeholder="Local do evento" required>
             <textarea name="descricao" id="descricao" placeholder="Descrição do evento" aria-placeholder="Descrição do evento"></textarea>
             <input type="submit" value="Criar evento">
         </form>
@@ -49,7 +49,7 @@
     </div>
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     
     const formev = document.getElementById('formev')
@@ -59,41 +59,44 @@
     const linkref3 = document.getElementById('urlref3')
     const linkref4 = document.getElementById('urlref4')
     const ag = document.getElementById('ag')
-    
+
+    const cardDinamico = document.querySelector('#ag .iframe-card');
 
     let titulo = urlParams.get('titulo')
     let inicioev = urlParams.get('inicioev');
     let fimev = urlParams.get('fimev')
     let localev = urlParams.get('localev')
     let descricao = urlParams.get('descricao')
-    
+
+    if (!titulo) {
+        cardDinamico.style.display = 'none';
+    } else {
+        cardDinamico.style.display = 'flex'; 
+    }
+
     function toUTC(dateString) {
-    if (!dateString) return '';
-
-    const date = new Date(dateString);
-
-    if (isNaN(date.getTime())) return '';
-    return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-}
-
+        if (!dateString) return '';
+        const date = new Date(dateString);
+        if (isNaN(date.getTime())) return '';
+        return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+    }
 
     const urlgooglecal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(titulo || 'Evento')}&dates=${toUTC(inicioev)}/${toUTC(fimev)}&details=${encodeURIComponent(descricao || '')}`
-
-
-
 
     inicioev = Date.parse(inicioev)
     const data = new Date(parseInt(inicioev))
     const mes = String(data.getMonth() + 1).padStart(2, '0')
     const dia = String(data.getDate()).padStart(2, '0');
     const inicio = dia + '/' + mes;
-        document.getElementById('titulodin').innerHTML = titulo;
-        document.getElementById('iniciodin').innerHTML = inicio;
+
+    document.getElementById('titulodin').innerHTML = titulo;
+    document.getElementById('iniciodin').innerHTML = inicio;
 
     botao.addEventListener('click', () => {
         formev.style.display = 'block';
         ag.style.display = 'none';
     })
+
     linkref1.addEventListener('click', () => {
         window.open(urlgooglecal, '_blank')
     });
